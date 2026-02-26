@@ -1,0 +1,11 @@
+{
+  "name": "quik-social",
+  "version": "1.0.0",
+  "description": "Quik Social Network",
+  "scripts": {
+    "start": "cd server && npm install && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
