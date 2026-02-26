@@ -7,15 +7,19 @@ const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 const JWT_SECRET = 'quik-secret-key-2024';
 
-// Register
+// Register (no email required)
 router.post('/register', async (req, res) => {
   try {
-    const { username, email, password, firstName, lastName } = req.body;
+    const { username, password, firstName, lastName } = req.body;
+    
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username and password required' });
+    }
     
     await db.read();
     
     // Check if user exists
-    const existingUser = db.data.users.find(u => u.email === email || u.username === username);
+    const existingUser = db.data.users.find(u => u.username === username);
     if (existingUser) {
       return res.status(400).json({ error: 'User already exists' });
     }
@@ -27,7 +31,7 @@ router.post('/register', async (req, res) => {
     const user = {
       id: uuidv4(),
       username,
-      email,
+      email: username + '@quik.local',
       password: hashedPassword,
       firstName: firstName || '',
       lastName: lastName || '',
@@ -59,15 +63,19 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login
+// Login (username or email)
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
+    
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username and password required' });
+    }
     
     await db.read();
     
-    // Find user
-    const user = db.data.users.find(u => u.email === email);
+    // Find user by username
+    const user = db.data.users.find(u => u.username === username);
     if (!user) {
       return res.status(400).json({ error: 'Invalid credentials' });
     }
