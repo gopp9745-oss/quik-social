@@ -1,30 +1,45 @@
 # Quik Social Network
 
-A social network similar to VKontakte built with Node.js and vanilla JavaScript.
+Социальная сеть как ВКонтакте.
 
-## Features
-- User registration and authentication
-- Posts with photos, likes, and comments
-- Messenger with real-time messaging
-- Groups creation and management
-- User profiles
+## 🚀 Быстрый старт
 
-## Tech Stack
-- Backend: Node.js + Express
-- Database: LowDB (JSON file)
-- Real-time: Socket.io
-- Frontend: Vanilla HTML/CSS/JS
-
-## Installation
-
+### Локальный запуск:
 ```bash
 cd server
 npm install
-node index.js
+npm start
 ```
+Откройте http://localhost:3000
 
-## Access
-- Local: http://localhost:3000
+## ☁️ Деплой на Render.com
 
-## License
-MIT
+### Автоматический деплой:
+1. Зарегистрируйтесь на https://render.com
+2. Подключите GitHub аккаунт
+3. Создайте новый Web Service:
+   - Repository: gopp9745-oss/quik-social
+   - Branch: main
+   - Build Command: npm install
+   - Start Command: npm start
+   - Runtime: Node
+
+### Переменные окружения:
+- NODE_ENV=production
+- PORT=3000
+
+## 📱 Функции
+
+- Регистрация и вход
+- Посты с фото
+- Лайки и комментарии
+- Мессенджер
+- Создание групп
+- Поиск друзей
+
+## 🛠 Технологии
+
+- Node.js + Express
+- Socket.io для мессенджера
+- JSON база данных
+- HTML/CSS/JS frontend
