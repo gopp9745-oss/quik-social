@@ -1,4 +1,6 @@
 @echo off
-cd /d "%~dp0quik\server"
-start "" node index.js
-exit
+cd /d "%~dp0server"
+echo Starting Quik Social Network Server...
+echo.
+node index.js
+pause
