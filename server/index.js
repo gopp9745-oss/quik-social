@@ -26,9 +26,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Serve static files from server/client folder
-const clientPath = path.join(__dirname, 'client');
+// Serve static files - determine correct path
+let clientPath = path.join(__dirname, 'client');
+const fs = require('fs');
+if (!fs.existsSync(clientPath)) {
+  clientPath = path.join(__dirname, '../client');
+}
+if (!fs.existsSync(clientPath)) {
+  clientPath = path.join(process.cwd(), 'client');
+}
 console.log('Serving client from:', clientPath);
+console.log('__dirname:', __dirname);
+console.log('process.cwd():', process.cwd());
 app.use(express.static(clientPath));
 app.get('/', (req, res) => {
   res.sendFile(path.join(clientPath, 'index.html'));
