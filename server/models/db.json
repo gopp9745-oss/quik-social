@@ -1,0 +1,121 @@
+{
+  "users": [
+    {
+      "id": "bffb7c2e-bf4e-4dcc-b9b3-26efd4c57012",
+      "username": "grimteam",
+      "email": "kolop908n4",
+      "password": "$2a$10$N9Kq/uzd2KDYm3MaCVkOEeXlseSrIM2Y0PnuOrJSm21.qsz9n6ouy",
+      "firstName": "kolop908",
+      "lastName": "Goplop",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T08:09:41.107Z"
+    },
+    {
+      "id": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+      "username": "grimteam2",
+      "email": "gopp9745@gmail.com",
+      "password": "$2a$10$0GfAW96NiTPM3Exfe1WFH.EjQg0TZQuhRdOPwwR80J8P6vemf.2Oy",
+      "firstName": "kolop9082",
+      "lastName": "Goplop",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T08:10:31.471Z"
+    },
+    {
+      "id": "19e683fe-d86e-4462-8397-5f7fdae88e28",
+      "username": "admin",
+      "email": "admin@quik.com",
+      "password": "$2a$10$t5m5SzTOEh4UMovKXDdiXeA8amYwuUkDgL6DlZIkxNi/e.PfqHFBK",
+      "firstName": "Admin",
+      "lastName": "User",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T08:12:42.771Z"
+    },
+    {
+      "id": "54aa2e37-10b3-47da-812b-89557295e006",
+      "username": "newuser",
+      "email": "newuser@test.com",
+      "password": "$2a$10$pE0MS9CQZ.4LW7vsks7cnOrOn83VQwlfAkKVJuwWjO5NMXfKWGOE6",
+      "firstName": "New",
+      "lastName": "User",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T08:51:05.584Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "329c524a-2793-4bed-87b0-29227ebcbf7b",
+      "userId": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+      "authorName": "kolop9082 Goplop",
+      "authorUsername": "grimteam2",
+      "authorAvatar": "",
+      "content": "новое видео",
+      "image": "/uploads/2dbf81ef-ccec-4418-a819-958c084923e2.png",
+      "likes": [
+        "baeaa1fb-edbc-4679-af38-bda50798bd70"
+      ],
+      "comments": [
+        {
+          "id": "fe52fb8c-73f1-475d-be48-273fb70a9a4a",
+          "userId": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+          "authorName": "kolop9082 Goplop",
+          "authorUsername": "grimteam2",
+          "authorAvatar": "",
+          "text": "класно",
+          "createdAt": "2026-02-26T08:35:24.222Z"
+        }
+      ],
+      "createdAt": "2026-02-26T08:35:13.950Z"
+    }
+  ],
+  "messages": [],
+  "conversations": [
+    {
+      "id": "6e2102d6-a1c1-4204-af15-19ef07508f0f",
+      "participants": [
+        "baeaa1fb-edbc-4679-af38-bda50798bd70",
+        "bffb7c2e-bf4e-4dcc-b9b3-26efd4c57012"
+      ],
+      "messages": [
+        {
+          "id": "235a0e3e-4345-4c8e-b029-c9e84ef0e4eb",
+          "senderId": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+          "recipientId": "bffb7c2e-bf4e-4dcc-b9b3-26efd4c57012",
+          "senderName": "kolop9082 Goplop",
+          "senderAvatar": "",
+          "text": "привет",
+          "read": true,
+          "createdAt": "2026-02-26T08:10:46.818Z"
+        },
+        {
+          "id": "88e471e5-470c-4a5b-80bf-6cdaba3e8b5d",
+          "senderId": "bffb7c2e-bf4e-4dcc-b9b3-26efd4c57012",
+          "recipientId": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+          "senderName": "kolop908 Goplop",
+          "senderAvatar": "",
+          "text": "ку",
+          "read": true,
+          "createdAt": "2026-02-26T08:10:56.347Z"
+        },
+        {
+          "id": "7a490abe-28b7-4668-b211-23acfe817f51",
+          "senderId": "baeaa1fb-edbc-4679-af38-bda50798bd70",
+          "recipientId": "bffb7c2e-bf4e-4dcc-b9b3-26efd4c57012",
+          "senderName": "kolop9082 Goplop",
+          "senderAvatar": "",
+          "text": "как дела",
+          "read": false,
+          "createdAt": "2026-02-26T08:35:07.813Z"
+        }
+      ],
+      "createdAt": "2026-02-26T08:10:35.420Z"
+    }
+  ],
+  "groups": [],
+  "groupMembers": [],
+  "friendships": [],
+  "comments": []
+}
