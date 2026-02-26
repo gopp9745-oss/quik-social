@@ -43,6 +43,17 @@
       "avatar": "",
       "bio": "",
       "createdAt": "2026-02-26T08:51:05.584Z"
+    },
+    {
+      "id": "bd96cdf5-e07e-4ac1-bba1-5be43a28ed1c",
+      "username": "user1",
+      "email": "user1@test.com",
+      "password": "$2a$10$2gwnCJ9J.9/sMrIbrm7re.1dcLXAbCQMeac8g6H8xqLaSPIdmhyP2",
+      "firstName": "",
+      "lastName": "",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T11:46:00.253Z"
     }
   ],
   "posts": [
