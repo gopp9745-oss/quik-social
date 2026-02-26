@@ -757,7 +757,7 @@
         <div class="auth-box">
             <h1><i class="fas fa-bolt"></i> Quik</h1>
             <div id="loginForm">
-                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="text" id="loginUsername" placeholder="Имя пользователя">
                 <input type="password" id="loginPassword" placeholder="Пароль">
                 <button onclick="login()">Войти</button>
                 <p class="switch" onclick="showRegister()">Нет аккаунта? Зарегистрироваться</p>
@@ -766,7 +766,6 @@
                 <input type="text" id="regUsername" placeholder="Имя пользователя">
                 <input type="text" id="regFirstName" placeholder="Имя">
                 <input type="text" id="regLastName" placeholder="Фамилия">
-                <input type="email" id="regEmail" placeholder="Email">
                 <input type="password" id="regPassword" placeholder="Пароль">
                 <button onclick="register()">Зарегистрироваться</button>
                 <p class="switch" onclick="showLogin()">Есть аккаунт? Войти</p>
@@ -944,11 +943,10 @@
             const username = document.getElementById('regUsername').value;
             const firstName = document.getElementById('regFirstName').value;
             const lastName = document.getElementById('regLastName').value;
-            const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
 
-            if (!username || !email || !password) {
-                showNotification('Заполните все поля', 'error');
+            if (!username || !password) {
+                showNotification('Заполните имя пользователя и пароль', 'error');
                 return;
             }
 
@@ -956,7 +954,7 @@
                 const response = await fetch(`${API_URL}/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, firstName, lastName, email, password })
+                    body: JSON.stringify({ username, firstName, lastName, password })
                 });
 
                 const data = await response.json();
@@ -974,11 +972,11 @@
         }
 
         async function login() {
-            const email = document.getElementById('loginEmail').value;
+            const username = document.getElementById('loginUsername').value;
             const password = document.getElementById('loginPassword').value;
 
-            if (!email || !password) {
-                showNotification('Заполните все поля', 'error');
+            if (!username || !password) {
+                showNotification('Заполните имя пользователя и пароль', 'error');
                 return;
             }
 
@@ -986,7 +984,7 @@
                 const response = await fetch(`${API_URL}/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
+                    body: JSON.stringify({ username, password })
                 });
 
                 const data = await response.json();
