@@ -54,6 +54,17 @@
       "avatar": "",
       "bio": "",
       "createdAt": "2026-02-26T11:46:00.253Z"
+    },
+    {
+      "id": "b99ecf97-e652-494c-a75d-ec376706ef42",
+      "username": "testuser123",
+      "email": "testuser123@quik.local",
+      "password": "$2a$10$Ou.AQu1XD33Ds2.AsRVDluLyVvCche7F6OMr2LEfNwyV6f72gi43O",
+      "firstName": "",
+      "lastName": "",
+      "avatar": "",
+      "bio": "",
+      "createdAt": "2026-02-26T11:51:37.603Z"
     }
   ],
   "posts": [
