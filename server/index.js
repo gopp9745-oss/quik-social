@@ -26,6 +26,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Serve static files from server/client folder
+const clientPath = path.join(__dirname, 'client');
+console.log('Serving client from:', clientPath);
+app.use(express.static(clientPath));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(clientPath, 'index.html'));
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
@@ -33,13 +41,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/groups', groupRoutes);
 
-// Serve static files (client)
-app.use(express.static(path.join(__dirname, '../client')));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
-});
-
-// Socket.io для мессенджера
+// Socket.io
 const connectedUsers = new Map();
 
 io.on('connection', (socket) => {
@@ -48,7 +50,7 @@ io.on('connection', (socket) => {
   socket.on('join', (userId) => {
     connectedUsers.set(userId, socket.id);
     socket.userId = userId;
-    console.log(`User ${userId} joined with socket ${socket.id}`);
+    console.log(`User ${userId} joined`);
   });
 
   socket.on('sendMessage', (data) => {
@@ -72,10 +74,8 @@ io.on('connection', (socket) => {
   });
 });
 
-// Make io accessible to routes
 app.set('io', io);
 
-// Initialize database and start server
 const PORT = process.env.PORT || 3000;
 
 async function startServer() {
@@ -85,7 +85,7 @@ async function startServer() {
     
     server.listen(PORT, '0.0.0.0', () => {
       console.log(`Quik server running on http://localhost:${PORT}`);
-      console.log(` доступ с других устройств: http://ВАШ_IP:${PORT}`);
+      console.log(`Access from other devices: http://YOUR_IP:${PORT}`);
     });
   } catch (error) {
     console.error('Failed to start server:', error);
