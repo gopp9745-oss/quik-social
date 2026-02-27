@@ -23,6 +23,61 @@
             --text-secondary: #939393;
             --border: #e7e8ec;
             --green: #4bb34b;
+            --header-bg: #ffffff;
+            --input-bg: #f0f2f5;
+            --hover-bg: #e5ebf1;
+            --message-sent: #5181b8;
+            --message-received: #f0f2f5;
+            --message-text: #000000;
+            --message-sent-text: #ffffff;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            --bg: #1a1a1a;
+            --white: #2d2d2d;
+            --text: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border: #404040;
+            --header-bg: #2d2d2d;
+            --input-bg: #404040;
+            --hover-bg: #3d3d3d;
+            --message-received: #404040;
+            --message-text: #e0e0e0;
+        }
+
+        body.dark-mode .search-box input,
+        body.dark-mode .create-post textarea,
+        body.dark-mode .comment-input input,
+        body.dark-mode .chat-input input,
+        body.dark-mode .modal-content input,
+        body.dark-mode .modal-content textarea,
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea {
+            background: var(--input-bg);
+            color: var(--text);
+        }
+
+        body.dark-mode .sidebar-menu li:hover,
+        body.dark-mode .sidebar-menu li.active,
+        body.dark-mode .contact:hover,
+        body.dark-mode .contact.active,
+        body.dark-mode .user-item:hover,
+        body.dark-mode .notification-item:hover {
+            background: var(--hover-bg);
+        }
+
+        body.dark-mode .message.received {
+            background: var(--message-received);
+            color: var(--message-text);
+        }
+
+        body.dark-mode .comment-content {
+            background: var(--input-bg);
+        }
+
+        body.dark-mode .auth-screen {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
 
         body {
@@ -1046,6 +1101,7 @@
                 <input type="text" id="searchInput" placeholder="Поиск" onkeyup="searchUsers(this.value)">
             </div>
             <nav class="header-nav">
+                <a onclick="toggleDarkMode()" id="darkModeToggle" title="Тёмная тема" style="font-size: 18px;"><i class="fas fa-moon"></i></a>
                 <a onclick="showSection('feed')" id="navFeed" class="active"><i class="fas fa-newspaper"></i></a>
                 <a onclick="showSection('messenger')" id="navMessenger"><i class="fas fa-envelope"></i></a>
                 <a onclick="showSection('groups')" id="navGroups"><i class="fas fa-users"></i></a>
@@ -1229,6 +1285,12 @@
 
         // Check auth on load
         window.onload = async () => {
+            // Load dark mode preference
+            if (localStorage.getItem('quik_dark_mode') === 'true') {
+                document.body.classList.add('dark-mode');
+                updateDarkModeIcon();
+            }
+            
             if (token) {
                 try {
                     const response = await fetch(`${API_URL}/auth/me`, {
@@ -1246,6 +1308,23 @@
                 }
             }
         };
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('quik_dark_mode', isDark);
+            updateDarkModeIcon();
+        }
+
+        function updateDarkModeIcon() {
+            const toggle = document.getElementById('darkModeToggle');
+            if (document.body.classList.contains('dark-mode')) {
+                toggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                toggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
 
         // Auth functions
         function showRegister() {
