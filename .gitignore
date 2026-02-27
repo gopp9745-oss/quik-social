@@ -1,6 +1,12 @@
 node_modules/
-uploads/
-database.db
 *.log
-.env
 .DS_Store
+*.txt
+"Разное/"
+"SOVA/"
+"Enhanced Horror Experience 5.0.1/"
+"ИГРЫ (1)/"
+"МЕМЫ ДЛЯ ДМИТРИЯ ПОЛКАНА/"
+"Anim and Sound,Music/"
+"для монтажа/"
+"для фотошопа/"
