@@ -13,7 +13,13 @@ const defaultData = {
   groups: [],
   groupMembers: [],
   friendships: [],
-  comments: []
+  comments: [],
+  notifications: [],
+  stories: [],
+  reactions: [],
+  bookmarks: [],
+  polls: [],
+  profileViews: []
 };
 
 const db = new Low(adapter, defaultData);

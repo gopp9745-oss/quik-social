@@ -4,6 +4,7 @@ const db = require('../models/db');
 const { v4: uuidv4 } = require('uuid');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 const router = express.Router();
 const JWT_SECRET = 'quik-secret-key-2024';
@@ -24,10 +25,23 @@ const auth = (req, res, next) => {
   }
 };
 
+// Determine uploads folder location
+let uploadsDir = path.join(__dirname, '../uploads');
+if (!fs.existsSync(uploadsDir)) {
+  uploadsDir = path.join(__dirname, 'uploads');
+}
+if (!fs.existsSync(uploadsDir)) {
+  uploadsDir = path.join(process.cwd(), 'uploads');
+}
+// Create uploads directory if it doesn't exist
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 // Configure multer for image upload
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../uploads'));
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
@@ -72,10 +86,20 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Upload image for post
+// Upload image for post (save as Base64 for persistence)
 router.post('/upload', auth, upload.single('image'), async (req, res) => {
   try {
-    res.json({ image: `/uploads/${req.file.filename}` });
+    const fs = require('fs');
+    const imagePath = req.file.path;
+    const imageBuffer = fs.readFileSync(imagePath);
+    const base64Image = imageBuffer.toString('base64');
+    const mimeType = req.file.mimetype;
+    const dataUrl = `data:${mimeType};base64,${base64Image}`;
+    
+    // Delete the temp file
+    fs.unlinkSync(imagePath);
+    
+    res.json({ image: dataUrl });
   } catch (error) {
     console.error('Upload image error:', error);
     res.status(500).json({ error: 'Server error' });

@@ -749,6 +749,269 @@
             right: 0;
             border: 2px solid var(--white);
         }
+
+        /* Friends Section */
+        .friends-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .friends-tab {
+            padding: 10px 20px;
+            background: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .friends-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .friend-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .friend-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .friend-info {
+            flex: 1;
+        }
+
+        .friend-info h4 {
+            font-weight: 600;
+        }
+
+        .friend-info p {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .friend-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .friend-actions button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .friend-actions .accept {
+            background: var(--green);
+            color: white;
+        }
+
+        .friend-actions .decline {
+            background: #f0f2f5;
+            color: var(--text);
+        }
+
+        .friend-actions .message-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .friend-actions .remove-btn {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Notifications */
+        .notifications-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 350px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            z-index: 2000;
+            display: none;
+        }
+
+        .notifications-dropdown.active {
+            display: block;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .notification-item:hover {
+            background: #f0f2f5;
+        }
+
+        .notification-item.unread {
+            background: #e8f4ff;
+        }
+
+        .notification-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .notification-text {
+            flex: 1;
+        }
+
+        .notification-text strong {
+            font-weight: 600;
+        }
+
+        .notification-time {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Edit Profile Modal */
+        .edit-profile-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .edit-profile-section h3 {
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .avatar-upload {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .avatar-upload img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .avatar-upload input[type="file"] {
+            display: none;
+        }
+
+        .avatar-upload label {
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Suggestions */
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .suggestion-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .suggestion-card img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-card h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .suggestion-card p {
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-card button {
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -797,6 +1060,7 @@
             <aside class="sidebar">
                 <ul class="sidebar-menu">
                     <li onclick="showSection('feed')" class="active" id="menuFeed"><i class="fas fa-newspaper"></i> Новости</li>
+                    <li onclick="showSection('stories')" id="menuStories"><i class="fas fa-circle-notch"></i> Истории</li>
                     <li onclick="showSection('profile')" id="menuProfile"><i class="fas fa-user"></i> Моя страница</li>
                     <li onclick="showSection('messenger')" id="menuMessenger"><i class="fas fa-envelope"></i> Сообщения</li>
                     <li onclick="showSection('groups')" id="menuGroups"><i class="fas fa-users"></i> Группы</li>
@@ -875,6 +1139,18 @@
                     </div>
                     <div id="profilePosts"></div>
                 </section>
+
+                <!-- Stories Section -->
+                <section id="storiesSection" class="hidden">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>Истории</h2>
+                        <button onclick="openCreateStoryModal()" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            <i class="fas fa-plus"></i> Добавить историю
+                        </button>
+                    </div>
+                    <div id="storiesGrid" style="display: flex; gap: 15px; overflow-x: auto; padding: 10px 0;"></div>
+                    <div id="storiesContent" style="margin-top: 20px;"></div>
+                </section>
             </main>
         </div>
     </div>
@@ -887,6 +1163,44 @@
             <textarea id="groupDescription" placeholder="Описание группы" rows="3"></textarea>
             <button onclick="createGroup()">Создать</button>
             <button class="cancel" onclick="closeCreateGroupModal()">Отмена</button>
+        </div>
+    </div>
+
+    <!-- Friends Section Modal -->
+    <div id="friendsSection" class="hidden" style="position:fixed; top:60px; left:170px; right:0; bottom:0; background:var(--bg); z-index:500; overflow-y:auto; padding:20px;">
+        <div class="friends-tabs">
+            <button class="friends-tab active" onclick="showFriendsTab('friends')" id="tabFriends">Друзья</button>
+            <button class="friends-tab" onclick="showFriendsTab('requests')" id="tabRequests">Заявки <span id="requestsCount"></span></button>
+            <button class="friends-tab" onclick="showFriendsTab('suggestions')" id="tabSuggestions">Рекомендации</button>
+        </div>
+        <div id="friendsList"></div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <h2>Редактировать профиль</h2>
+            <div class="avatar-upload">
+                <img id="editAvatarPreview" src="" alt="">
+                <label for="editAvatarInput">
+                    <i class="fas fa-camera"></i> Изменить фото
+                </label>
+                <input type="file" id="editAvatarInput" accept="image/*" onchange="previewEditAvatar(this)">
+            </div>
+            <div class="form-group">
+                <label>Имя</label>
+                <input type="text" id="editFirstName" placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+                <label>Фамилия</label>
+                <input type="text" id="editLastName" placeholder="Ваша фамилия">
+            </div>
+            <div class="form-group">
+                <label>О себе</label>
+                <textarea id="editBio" placeholder="Расскажите о себе"></textarea>
+            </div>
+            <button onclick="saveProfile()">Сохранить</button>
+            <button class="cancel" onclick="closeEditProfileModal()">Отмена</button>
         </div>
     </div>
 
@@ -903,6 +1217,11 @@
         let usersData = [];
         let conversationsData = [];
         let searchTimeout = null;
+        let friendsData = [];
+        let friendRequestsData = [];
+        let suggestionsData = [];
+        let notificationsData = [];
+        let currentFriendsTab = 'friends';
 
         // API URL - automatically detect current host
         const API_URL = (window.location.protocol + '//' + window.location.host) + '/api';
@@ -1015,9 +1334,10 @@
         function updateUserUI() {
             const avatarUrl = currentUser.avatar ? (HOST_URL + currentUser.avatar) : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
             
-            document.getElementById('headerAvatar').src = avatarUrl;
-            document.getElementById('createPostAvatar').src = avatarUrl;
-            document.getElementById('profileAvatar').src = avatarUrl;
+            // Avatar is already Base64, use it directly
+            document.getElementById('headerAvatar').src = currentUser.avatar || avatarUrl;
+            document.getElementById('createPostAvatar').src = currentUser.avatar || avatarUrl;
+            document.getElementById('profileAvatar').src = currentUser.avatar || avatarUrl;
             document.getElementById('profileName').textContent = `${currentUser.firstName} ${currentUser.lastName}`.trim() || currentUser.username;
             document.getElementById('profileUsername').textContent = '@' + currentUser.username;
             document.getElementById('profileBio').textContent = currentUser.bio || 'Нет информации о себе';
@@ -1035,12 +1355,17 @@
             document.getElementById('groupsSection').classList.add('hidden');
             document.getElementById('usersSection').classList.add('hidden');
             document.getElementById('profileSection').classList.add('hidden');
+            document.getElementById('storiesSection').classList.add('hidden');
 
             if (section === 'feed') {
                 document.getElementById('feedSection').classList.remove('hidden');
                 document.getElementById('navFeed').classList.add('active');
                 document.getElementById('menuFeed').classList.add('active');
                 loadPosts();
+            } else if (section === 'stories') {
+                document.getElementById('storiesSection').classList.remove('hidden');
+                document.getElementById('menuStories').classList.add('active');
+                loadStories();
             } else if (section === 'messenger') {
                 document.getElementById('messengerSection').classList.remove('hidden');
                 document.getElementById('navMessenger').classList.add('active');
@@ -1080,17 +1405,20 @@
 
         function renderPosts(posts) {
             const feed = document.getElementById('postsFeed');
-            feed.innerHTML = posts.map(post => `
+            feed.innerHTML = posts.map(post => {
+                // Handle both Base64 and URL avatars
+                const avatarSrc = post.authorAvatar ? (post.authorAvatar.startsWith('data:') ? post.authorAvatar : HOST_URL + post.authorAvatar) : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
+                return `
                 <div class="post" data-id="${post.id}">
                     <div class="post-header">
-                        <img class="post-avatar" src="${post.authorAvatar ? HOST_URL + post.authorAvatar : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E'}" alt="">
+                        <img class="post-avatar" src="${avatarSrc}" alt="">
                         <div>
                             <div class="post-author">${post.authorName}</div>
                             <div class="post-time">${formatDate(post.createdAt)}</div>
                         </div>
                     </div>
                     <div class="post-content">${post.content}</div>
-                    ${post.image ? `<img class="post-image" src="${HOST_URL}${post.image}" alt="">` : ''}
+                    ${post.image ? `<img class="post-image" src="${post.image}" alt="">` : ''}
                     <div class="post-actions">
                         <div class="post-action ${post.isLiked ? 'liked' : ''}" onclick="likePost('${post.id}')">
                             <i class="fas fa-heart"></i> <span>${post.likesCount || 0}</span>
@@ -1106,7 +1434,8 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         async function createPost() {
@@ -1537,6 +1866,257 @@
             return date.toLocaleDateString('ru');
         }
 
+        // Friends functions
+        async function loadFriends() {
+            try {
+                const response = await fetch(`${API_URL}/friends`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    friendsData = await response.json();
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function loadFriendRequests() {
+            try {
+                const response = await fetch(`${API_URL}/friends/requests`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    friendRequestsData = await response.json();
+                    document.getElementById('requestsCount').textContent = friendRequestsData.length > 0 ? `(${friendRequestsData.length})` : '';
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function loadSuggestions() {
+            try {
+                const response = await fetch(`${API_URL}/friends/suggestions`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    suggestionsData = await response.json();
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function showFriendsTab(tab) {
+            currentFriendsTab = tab;
+            document.querySelectorAll('.friends-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+            renderFriendsList();
+        }
+
+        async function renderFriendsList() {
+            await loadFriends();
+            await loadFriendRequests();
+            await loadSuggestions();
+
+            const list = document.getElementById('friendsList');
+            
+            if (currentFriendsTab === 'friends') {
+                if (friendsData.length === 0) {
+                    list.innerHTML = '<p style="text-align:center; color:var(--text-secondary);">У вас пока нет друзей</p>';
+                } else {
+                    list.innerHTML = friendsData.map(friend => `
+                        <div class="friend-card">
+                            <img src="${friend.avatar ? (friend.avatar.startsWith('data:') ? friend.avatar : HOST_URL + friend.avatar) : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E'}" alt="">
+                            <div class="friend-info">
+                                <h4>${friend.firstName} ${friend.lastName}</h4>
+                                <p>@${friend.username}</p>
+                            </div>
+                            <div class="friend-actions">
+                                <button class="message-btn" onclick="openChat('${friend.id}')"><i class="fas fa-envelope"></i> Написать</button>
+                                <button class="remove-btn" onclick="removeFriend('${friend.id}')"><i class="fas fa-user-minus"></i></button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } else if (currentFriendsTab === 'requests') {
+                if (friendRequestsData.length === 0) {
+                    list.innerHTML = '<p style="text-align:center; color:var(--text-secondary);">У вас нет новых заявок</p>';
+                } else {
+                    list.innerHTML = friendRequestsData.map(req => `
+                        <div class="friend-card">
+                            <img src="${req.avatar ? (req.avatar.startsWith('data:') ? req.avatar : HOST_URL + req.avatar) : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E'}" alt="">
+                            <div class="friend-info">
+                                <h4>${req.firstName} ${req.lastName}</h4>
+                                <p>@${req.username}</p>
+                            </div>
+                            <div class="friend-actions">
+                                <button class="accept" onclick="acceptFriendRequest('${req.id}')"><i class="fas fa-check"></i> Принять</button>
+                                <button class="decline" onclick="declineFriendRequest('${req.id}')"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } else if (currentFriendsTab === 'suggestions') {
+                if (suggestionsData.length === 0) {
+                    list.innerHTML = '<p style="text-align:center; color:var(--text-secondary);">Нет рекомендаций</p>';
+                } else {
+                    list.innerHTML = '<div class="suggestions-grid">' + suggestionsData.map(user => `
+                        <div class="suggestion-card">
+                            <img src="${user.avatar ? (user.avatar.startsWith('data:') ? user.avatar : HOST_URL + user.avatar) : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E'}" alt="">
+                            <h4>${user.firstName} ${user.lastName}</h4>
+                            <p>@${user.username}</p>
+                            <button onclick="sendFriendRequest('${user.id}')"><i class="fas fa-user-plus"></i> Добавить</button>
+                        </div>
+                    `).join('') + '</div>';
+                }
+            }
+        }
+
+        async function sendFriendRequest(userId) {
+            try {
+                const response = await fetch(`${API_URL}/friends/request/${userId}`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    showNotification('Запрос отправлен!', 'success');
+                    loadSuggestions();
+                }
+            } catch (e) {
+                showNotification('Ошибка', 'error');
+            }
+        }
+
+        async function acceptFriendRequest(friendshipId) {
+            try {
+                const response = await fetch(`${API_URL}/friends/accept/${friendshipId}`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    showNotification('Заявка принята!', 'success');
+                    renderFriendsList();
+                }
+            } catch (e) {
+                showNotification('Ошибка', 'error');
+            }
+        }
+
+        async function declineFriendRequest(friendshipId) {
+            try {
+                const response = await fetch(`${API_URL}/friends/reject/${friendshipId}`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    renderFriendsList();
+                }
+            } catch (e) {
+                showNotification('Ошибка', 'error');
+            }
+        }
+
+        async function removeFriend(friendId) {
+            if (!confirm('Вы уверены, что хотите удалить из друзей?')) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/friends/${friendId}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    showNotification('Пользователь удалён из друзей', 'success');
+                    renderFriendsList();
+                }
+            } catch (e) {
+                showNotification('Ошибка', 'error');
+            }
+        }
+
+        // Profile editing
+        function openEditProfileModal() {
+            document.getElementById('editFirstName').value = currentUser.firstName || '';
+            document.getElementById('editLastName').value = currentUser.lastName || '';
+            document.getElementById('editBio').value = currentUser.bio || '';
+            document.getElementById('editAvatarPreview').src = currentUser.avatar || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
+            document.getElementById('editProfileModal').classList.add('active');
+        }
+
+        function closeEditProfileModal() {
+            document.getElementById('editProfileModal').classList.remove('active');
+        }
+
+        function previewEditAvatar(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('editAvatarPreview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        async function saveProfile() {
+            const firstName = document.getElementById('editFirstName').value;
+            const lastName = document.getElementById('editLastName').value;
+            const bio = document.getElementById('editBio').value;
+            const avatarInput = document.getElementById('editAvatarInput');
+
+            try {
+                // Update profile data
+                const response = await fetch(`${API_URL}/users/profile`, {
+                    method: 'PUT',
+                    headers: { 
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ firstName, lastName, bio })
+                });
+
+                if (response.ok) {
+                    currentUser = await response.json();
+                    
+                    // Upload avatar if selected
+                    if (avatarInput.files[0]) {
+                        const formData = new FormData();
+                        formData.append('avatar', avatarInput.files[0]);
+                        
+                        const avatarResponse = await fetch(`${API_URL}/auth/avatar`, {
+                            method: 'POST',
+                            headers: { 'Authorization': `Bearer ${token}` },
+                            body: formData
+                        });
+                        
+                        if (avatarResponse.ok) {
+                            const avatarData = await avatarResponse.json();
+                            currentUser.avatar = avatarData.avatar;
+                        }
+                    }
+
+                    updateUserUI();
+                    closeEditProfileModal();
+                    showNotification('Профиль обновлён!', 'success');
+                }
+            } catch (e) {
+                showNotification('Ошибка сохранения', 'error');
+            }
+        }
+
+        // Notifications
+        async function loadNotifications() {
+            try {
+                const response = await fetch(`${API_URL}/notifications`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    notificationsData = await response.json();
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
         function showNotification(message, type = 'success') {
             const notif = document.getElementById('notification');
             notif.textContent = message;
@@ -1545,6 +2125,178 @@
             setTimeout(() => {
                 notif.classList.add('hidden');
             }, 3000);
+        }
+
+        // Add edit profile button to profile section
+        function updateProfileSection() {
+            const profileDetails = document.querySelector('.profile-details');
+            if (profileDetails && !document.getElementById('editProfileBtn')) {
+                const editBtn = document.createElement('button');
+                editBtn.id = 'editProfileBtn';
+                editBtn.innerHTML = '<i class="fas fa-edit"></i> Редактировать';
+                editBtn.style.cssText = 'margin-top:10px; padding:8px 16px; background:var(--primary); color:white; border:none; border-radius:8px; cursor:pointer;';
+                editBtn.onclick = openEditProfileModal;
+                profileDetails.appendChild(editBtn);
+            }
+        }
+
+        // Override showSection to add edit button
+        const originalShowSection = showSection;
+        showSection = function(section) {
+            originalShowSection(section);
+            if (section === 'profile') {
+                setTimeout(updateProfileSection, 100);
+            }
+            if (section === 'users') {
+                setTimeout(() => {
+                    const list = document.getElementById('usersList');
+                    if (list && list.innerHTML) {
+                        list.innerHTML = list.innerHTML.replace(/ onclick="openChat\('/g, ' onclick="checkFriendAndChat(');
+                    }
+                }, 100);
+            }
+        };
+
+        // Add friend button to users
+        async function checkFriendAndChat(userId) {
+            try {
+                const response = await fetch(`${API_URL}/friends/status/${userId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.status === 'accepted') {
+                        openChat(userId);
+                    } else if (data.status === 'pending') {
+                        if (data.isPending) {
+                            showNotification('Запрос уже отправлен', 'success');
+                        } else {
+                            showNotification('Примите заявку в друзья', 'success');
+                        }
+                    } else {
+                        const add = confirm('Добавить в друзья?');
+                        if (add) {
+                            await sendFriendRequest(userId);
+                        }
+                    }
+                }
+            } catch (e) {
+                openChat(userId);
+            }
+        }
+
+        // Stories functions
+        let storiesData = [];
+
+        async function loadStories() {
+            try {
+                const response = await fetch(`${API_URL}/stories`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    storiesData = await response.json();
+                    renderStories(storiesData);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function renderStories(stories) {
+            const grid = document.getElementById('storiesGrid');
+            
+            // Add "My Story" button first
+            let html = `
+                <div style="text-align: center; cursor: pointer; min-width: 80px;" onclick="openCreateStoryModal()">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; border: 3px solid var(--primary); overflow: hidden; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: #f0f2f5;">
+                        <i class="fas fa-plus" style="font-size: 24px; color: var(--primary);"></i>
+                    </div>
+                    <p style="margin-top: 5px; font-size: 12px;">Добавить</p>
+                </div>
+            `;
+
+            // Group stories by user
+            const groupedStories = {};
+            stories.forEach(story => {
+                const userId = story.userId;
+                if (!groupedStories[userId]) {
+                    groupedStories[userId] = {
+                        user: story.author,
+                        stories: []
+                    };
+                }
+                groupedStories[userId].stories.push(story);
+            });
+
+            // Render user stories
+            Object.values(groupedStories).forEach(group => {
+                const latestStory = group.stories[0];
+                const avatarSrc = latestStory.authorAvatar ? 
+                    (latestStory.authorAvatar.startsWith('data:') ? latestStory.authorAvatar : HOST_URL + latestStory.authorAvatar) : 
+                    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235181b8"%3E%3Cpath d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/%3E%3C/svg%3E';
+                
+                html += `
+                    <div style="text-align: center; cursor: pointer; min-width: 80px;" onclick="viewStory('${group.user.id}')">
+                        <div style="width: 70px; height: 70px; border-radius: 50%; border: 3px solid var(--primary); overflow: hidden; margin: 0 auto;">
+                            <img src="${avatarSrc}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p style="margin-top: 5px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px;">${group.user.firstName || group.user.username}</p>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        function openCreateStoryModal() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('image', file);
+                    
+                    try {
+                        const response = await fetch(`${API_URL}/stories`, {
+                            method: 'POST',
+                            headers: { 'Authorization': `Bearer ${token}` },
+                            body: formData
+                        });
+                        
+                        if (response.ok) {
+                            showNotification('История добавлена!', 'success');
+                            loadStories();
+                        } else {
+                            showNotification('Ошибка создания истории', 'error');
+                        }
+                    } catch (err) {
+                        showNotification('Ошибка', 'error');
+                    }
+                }
+            };
+            input.click();
+        }
+
+        function viewStory(userId) {
+            const userStories = storiesData.filter(s => s.userId === userId);
+            if (userStories.length === 0) return;
+
+            // Simple story viewer - just show the first image
+            const story = userStories[0];
+            if (story.image) {
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 5000; display: flex; align-items: center; justify-content: center;';
+                modal.onclick = () => modal.remove();
+                
+                const img = document.createElement('img');
+                img.src = story.image.startsWith('data:') ? story.image : HOST_URL + story.image;
+                img.style.cssText = 'max-width: 90%; max-height: 90%; border-radius: 10px;';
+                
+                modal.appendChild(img);
+                document.body.appendChild(modal);
+            }
         }
     </script>
 </body>
